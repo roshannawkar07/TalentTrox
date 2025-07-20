@@ -12,7 +12,6 @@ import TrustCard from "./Componets/TrustCard/TrustCard.jsx";
 import FAQ from "./Componets/FAQ/FAQ.jsx";
 import Career from "./Componets/Career/Career.jsx";
 import TouchForm from "./Componets/TouchForm/TouchForm.jsx";
-
 function App() {
   return (
     <Router>
