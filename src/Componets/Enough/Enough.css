@@ -1,38 +1,55 @@
 /* Main container for the "Enough" hero section */
+
+.enough-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
 .enough-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column; /* content upar, visuals neeche */
   align-items: center;
   gap: 40px;
   padding: 100px 5%;
   background: linear-gradient(120deg, #f0f4ff 0%, #e6e9ff 100%);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   overflow: hidden;
   min-height: 90vh;
 }
 
 /* Left side content */
 .enough-content {
-  max-width: 550px;
+  max-width: 100%; /* 'full-width' is not a valid value */
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center; /* centers vertically if height is defined */
+  flex-direction: column; /* stack children vertically */
+  text-align: center;
+  padding: 20px;
 }
 
 .enough-content h1 {
   font-size: 3.8rem;
-  font-weight: 700;
+  font-weight: 1280px;
   color: #152147;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: -5px;
+  margin-top: 30px;
 }
 
 .enough-content p {
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   color: #555;
   margin-bottom: 40px;
+  max-width: 799px;
 }
 
 .button-group {
   display: flex;
   gap: 20px;
+  justify-content: center;
+  margin-bottom: 40px;
 }
 
 .btn {
@@ -128,22 +145,22 @@
 }
 
 .phone-footer {
-    text-align: center;
-    margin-top: auto;
-    padding: 15px;
-    border-top: 1px solid #eee;
+  text-align: center;
+  margin-top: auto;
+  padding: 15px;
+  border-top: 1px solid #eee;
 }
 
 .phone-footer p {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #152147;
-    margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #152147;
+  margin: 0;
 }
 
 .phone-footer span {
-    font-size: 0.8rem;
-    color: #777;
+  font-size: 0.8rem;
+  color: #777;
 }
 
 /* Floating stat cards */
@@ -170,20 +187,42 @@
   font-size: 1.2rem;
 }
 
-.card-careers { top: 30%; left: -50px; animation-delay: -2s; }
-.card-satisfaction { top: 10%; right: -60px; }
-.card-verified { bottom: 15%; right: -40px; animation-delay: -3s; }
+.card-careers {
+  top: 30%;
+  left: -50px;
+  animation-delay: -2s;
+}
+.card-satisfaction {
+  top: 10%;
+  right: -60px;
+}
+.card-verified {
+  bottom: 15%;
+  right: -40px;
+  animation-delay: -3s;
+}
 
-.card-careers .stat-icon { color: #ff9a2a; }
-.card-satisfaction .stat-icon { color: #ffc107; }
-.card-verified .stat-icon { color: #28a745; }
-
+.card-careers .stat-icon {
+  color: #ff9a2a;
+}
+.card-satisfaction .stat-icon {
+  color: #ffc107;
+}
+.card-verified .stat-icon {
+  color: #28a745;
+}
 
 /* Animation */
 @keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 /* Responsive adjustments */
@@ -203,20 +242,20 @@
     height: auto;
   }
   .stat-card {
-      position: static;
-      margin-top: 20px;
-      width: fit-content;
-      margin-left: auto;
-      margin-right: auto;
+    position: static;
+    margin-top: 20px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
   .enough-visuals {
-      display: flex;
-      flex-direction: column;
+    display: flex;
+    flex-direction: column;
   }
 }
 
 @media (max-width: 576px) {
-    .enough-content h1 {
-        font-size: 2.8rem;
-    }
+  .enough-content h1 {
+    font-size: 2.8rem;
+  }
 }

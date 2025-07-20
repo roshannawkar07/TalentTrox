@@ -5,12 +5,12 @@
   align-items: center;
   padding: 80px 5%;
   background-color: #f0f4ff; /* A light blueish-grey background */
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Content wrapper */
 .who-we-are-content {
-  max-width: 850px;
+  max-width: 1200px;
   text-align: center;
 }
 
@@ -22,7 +22,7 @@
 }
 
 .who-we-are-content p {
-  font-size: 1.25rem;
+  font-size: 2.12rem;
   line-height: 1.8;
   color: #333;
 }

@@ -13,20 +13,17 @@ import Enough from "./Componets/Enough/Enough.jsx";
 import WhoWeAre from "./Componets/WhoWeAre/WhoWeAre.jsx";
 import EveyField from "./Componets/EveyField/EveyField.jsx";
 
-
 function App() {
   return (
     <>
       <Navbar />
       <Enough />
-    
+
       <WhoWeAre />
-      
-    
-     
-        <Process />
-       <Opportunities />
-      <EveyField/>
+
+      <Process />
+      <Opportunities />
+      <EveyField />
       <TrustCard />
       <FAQ />
       <Career />
