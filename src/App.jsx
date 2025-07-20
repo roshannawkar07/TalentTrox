@@ -18,13 +18,16 @@ function App() {
   return (
     <>
       <Navbar />
+      <Enough />
     
       <WhoWeAre />
-      <Enough />
-      <Process />
-      <TrustCard />
+      
+    
+     
+        <Process />
+       <Opportunities />
       <EveyField/>
-      <Opportunities />
+      <TrustCard />
       <FAQ />
       <Career />
       <Footer />
