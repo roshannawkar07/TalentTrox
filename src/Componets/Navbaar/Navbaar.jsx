@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaArrowRight } from 'react-icons/fa';
 import './Navbaar.css';
+import logo from './logo.svg'; // Assuming you have a logo.svg file
 
 function Navbaar() {
   return (
