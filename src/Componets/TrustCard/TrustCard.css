@@ -1,0 +1,100 @@
+/* --- Styles for Trust Section --- */
+
+/* Main container for the "Built on Trust" section */
+.trust-section {
+  padding: 80px 5%;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.trust-title {
+  text-align: center;
+  font-size: 2.8rem;
+  color: #152147;
+  margin-bottom: 50px;
+  font-weight: 700;
+}
+
+/* Grid container for the testimonial cards */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+
+/* --- Styles for Testimonial Card --- */
+
+/* Styling for a single testimonial card */
+.testimonial-card {
+  background-color: #f0f2f5;
+  border-radius: 16px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* Header section with image and name/title */
+.card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
+  object-fit: cover;
+  border: 3px solid #ffffff;
+}
+
+.profile-info .name {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #111;
+  margin: 0;
+}
+
+.profile-info .title {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0;
+}
+
+/* The testimonial quote */
+.quote {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1; /* Allows quote to take up available space */
+}
+
+/* Container for the rating stars */
+.stars-container {
+  display: flex;
+  gap: 5px;
+  font-size: 1.2rem;
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .trust-title {
+    font-size: 2.2rem;
+  }
+  .testimonials-grid {
+    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  }
+}
