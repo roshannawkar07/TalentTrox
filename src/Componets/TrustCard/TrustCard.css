@@ -2,9 +2,10 @@
 
 /* Main container for the "Built on Trust" section */
 .trust-section {
-  padding: 80px 5%;
+  padding: 80px 0; /* Adjusted padding */
   background-color: #ffffff;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow: hidden; /* Hide overflowing content */
 }
 
 .trust-title {
@@ -15,13 +16,26 @@
   font-weight: 700;
 }
 
-/* Grid container for the testimonial cards */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
+/* Container to manage the horizontal scroll */
+.testimonials-container {
+  max-width: 100%;
   margin: 0 auto;
+}
+
+/* The actual scrolling element */
+.testimonials-scroller {
+  display: flex;
+  gap: 30px;
+  padding: 20px 0%; /* Add padding to the sides */
+  cursor: grab; /* Change cursor to indicate scrollable area */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari, and Opera */
+.testimonials-scroller::-webkit-scrollbar {
+  display: none;
 }
 
 
@@ -29,13 +43,15 @@
 
 /* Styling for a single testimonial card */
 .testimonial-card {
-  background-color: #f0f2f5;
-  border-radius: 16px;
-  padding: 30px;
+  background-color: #E8E8E8;
+  border-radius: 25px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 340px; /* Prevent shrinking, set a fixed width */
+  width: 340px;
 }
 
 .testimonial-card:hover {
@@ -47,7 +63,7 @@
 .card-header {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
+  
 }
 
 .profile-image {
@@ -76,9 +92,8 @@
 .quote {
   font-size: 1rem;
   color: #333;
-  line-height: 1.6;
-  margin-bottom: 20px;
-  flex-grow: 1; /* Allows quote to take up available space */
+  
+  white-space: normal; /* Allow text inside the card to wrap */
 }
 
 /* Container for the rating stars */
@@ -94,7 +109,8 @@
   .trust-title {
     font-size: 2.2rem;
   }
-  .testimonials-grid {
-    grid-template-columns: 1fr; /* Stack cards on smaller screens */
+  .testimonial-card {
+    flex: 0 0 80%; /* Make cards wider on smaller screens */
+    width: 80%;
   }
 }

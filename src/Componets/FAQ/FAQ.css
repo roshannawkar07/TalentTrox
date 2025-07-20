@@ -1,10 +1,10 @@
 /* Main container for the FAQ section */
 .faq-container {
-  max-width: 900px;
+  max-width: 1300px;
   margin: 60px auto;
   padding: 40px 20px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f8f9fa; /* Light grey background */
+  
+  
   border-radius: 12px;
 }
 
