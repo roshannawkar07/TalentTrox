@@ -1,7 +1,7 @@
 /* Main container for the "Every Field" section */
 .every-field-section {
   padding: 80px 5%;
-  background-color: #ffffff;
+  background-color: #f8f9fa; /* Slightly off-white background like the image */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
 }
@@ -10,25 +10,35 @@
   font-size: 2.8rem;
   font-weight: 700;
   color: #152147;
-  margin-bottom: 50px;
+  margin-bottom: 60px; /* Increased margin for better spacing */
 }
 
-/* Grid container for the field cards */
+/* This is the main container for the columns */
 .fields-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
-  max-width: 1200px;
+  display: flex;
+  justify-content: center; /* Center the columns horizontally */
+  align-items: center;    /* Vertically align the columns to the center */
+  gap: 50px;
+  max-width: 1300px;
   margin: 0 auto;
+}
+
+/* This is for each of the three columns */
+.fields-column {
+  display: flex;
+  flex-direction: column; /* Stack the cards vertically */
+  gap: 25px; /* Space between cards in a single column */
+  width: 30%; /* Assign a width to the columns */
 }
 
 /* Individual field card */
 .field-card {
-  background-color: #f0f2f5;
+  background-color: #ffffff; /* White card background */
   border-radius: 16px;
   padding: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #e9eaf2; /* Light border like the image */
 }
 
 .field-card:hover {
@@ -39,8 +49,9 @@
 .field-card img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
   display: block;
+  background-color: #e9eaf2; /* Placeholder background for the image area */
+  border-radius: 8px; /* Rounded corners for the image itself */
 }
 
 /* Responsive adjustments */
@@ -48,13 +59,21 @@
   .every-field-section h2 {
     font-size: 2.2rem;
   }
+  
+  /* On smaller screens, stack the columns vertically */
   .fields-grid {
-    grid-template-columns: 1fr 1fr; /* Two columns on smaller tablets */
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fields-column {
+    width: 80%; /* Give columns more width when stacked */
+    max-width: 400px;
   }
 }
 
 @media (max-width: 576px) {
-  .fields-grid {
-    grid-template-columns: 1fr; /* Single column on mobile */
+  .fields-column {
+    width: 100%; /* Full width on mobile */
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaLinkedinIn, FaInstagram, FaEnvelope } from 'react-icons/fa';
 import './Footer.css';
+import logo from './logo.svg'; // Assuming you have a logo image
 
 function Footer() {
   return (
@@ -8,8 +9,9 @@ function Footer() {
       <div className="footer-content">
         <div className="footer-left">
           <div className="footer-logo">
-            <h2>Talentrox</h2>
-            <p>Talent That Rocks</p>
+            {/* <h2>Talentrox</h2>
+            <p>Talent That Rocks</p> */}
+            <img src={logo} alt="Talentrox Logo" />
           </div>
           <p className="footer-description">
             From startups to global enterprises, we connect top talent with the roles they deserve.

@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 60vh; /* You can adjust this height */
+
   padding: 60px 20px;
   background: linear-gradient(135deg, #6a5af9, #d667cd);
   color: #ffffff;
@@ -15,7 +15,7 @@
 
 /* Content wrapper */
 .career-content {
-  max-width: 800px;
+  max-width: 1300px;
   z-index: 1; /* Ensures content is above the decorative shapes */
 }
 

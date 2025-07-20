@@ -1,50 +1,52 @@
 /* Main container for the process section */
 .process-section {
-  padding: 80px 5%;
-  background-color: #f8f9fa;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  padding: 80px 20px;
+  font-family: 'Inter', sans-serif;
   text-align: center;
-  position: relative;
-}
-
-/* Dotted line running through the middle */
-.process-section::before {
-  content: '';
-  position: absolute;
-  top: 220px; /* Adjust this to align with your content */
-  bottom: 150px; /* Adjust this to align with your content */
-  left: 50%;
-  border-left: 2px dotted #a9c1ff;
-  z-index: 0;
 }
 
 /* Header section */
 .process-header {
   max-width: 700px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 80px auto;
 }
 
 .process-header h2 {
-  font-size: 2.8rem;
-  color: #152147;
+  font-size: 2.5rem;
+  color: #1d285d;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 1rem;
 }
 
 .process-header p {
   font-size: 1.1rem;
-  color: #555;
+  color: #6e779a;
+  line-height: 1.6;
 }
 
 /* Container for the timeline steps */
 .process-timeline {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 80px 30px; /* Increased row-gap to prevent vertical overlap */
-  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  padding: 20px;
+}
+
+/* The continuous connecting line */
+.process-timeline::before {
+  content: '';
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #a9c1ff;
+  transform: translateY(-50%);
+  z-index: 0;
 }
 
 /* Individual step in the timeline */
@@ -53,74 +55,153 @@
   flex-direction: column;
   align-items: center;
   position: relative;
+  flex: 1;
+  max-width: 260px;
+}
+
+/* UPDATED: Sizing for odd and even steps */
+/* Target the odd steps (1st, 3rd) and make them LARGER */
+.process-step:nth-child(odd) {
+  transform: scale(1.05);
+}
+
+/* Target the even steps (2nd, 4th) and make them SMALLER */
+.process-step:nth-child(even) {
+  transform: scale(0.95);
 }
 
 /* The card containing the step details */
 .process-card {
   background-color: #ffffff;
-  border-radius: 16px;
-  padding: 60px 25px 30px 25px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-  border: 1px solid #e9ecef;
+  border-radius: 12px;
+  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef0f6;
   width: 100%;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.process-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .process-card h3 {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   font-weight: 600;
-  color: #212529;
+  color: #1d285d;
   margin-bottom: 10px;
 }
 
 .process-card p {
-  font-size: 1rem;
-  color: #6c757d;
+  font-size: 0.95rem;
+  color: #828ba9;
   line-height: 1.6;
 }
 
-/* Wrapper for the icon to position it above the card */
+/* Wrapper for the icon to position it */
 .process-icon-wrapper {
-  position: absolute;
-  top: -30px;
-  z-index: 2;
-  background-color: #f8f9fa; /* Match section background */
-  padding: 0 15px;
+  margin-bottom: 20px;
 }
 
 /* Styling for the icon itself */
 .process-icon {
-  width: 60px;
-  height: 60px;
-  background-color: #e3e9ff;
-  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #f0f3ff, #e3e9ff);
+  border-radius: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.8rem;
-  color: #152147;
-  box-shadow: 0 0 0 6px #f8f9fa;
+  font-size: 2rem;
+  color: #6475c3;
+  box-shadow: 0 0 0 8px #ffffff;
 }
 
-/* Footer text */
+/* Top circle */
+.process-card::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #f7f7fe;
+  border-radius: 50%;
+  z-index: 2;
+  border: 2px solid #eef0f6;
+}
+
+/* Right circle */
+.process-card::after {
+  content: '';
+  position: absolute;
+  top: 80px;
+  right: -20px;
+  width: 30px;
+  height: 30px;
+  background-color: #f7f7fe;
+  border-radius: 50%;
+  z-index: 2;
+  border: 2px solid #eef0f6;
+}
+
+
+/* Footer text and call-to-action link */
 .process-footer {
-  margin-top: 60px;
-  font-size: 1.1rem;
-  color: #555;
+  margin-top: 80px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-  .process-section::before {
-    display: none; /* Hide the dotted line on smaller screens */
+.process-footer p {
+  font-size: 1rem;
+  color: #6e779a;
+  margin-bottom: 1.5rem;
+}
+
+.process-cta-link {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6559d6;
+  text-decoration: none;
+  
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.process-cta-link:hover {
+  background-color: #d8d4f7;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .process-header h2 {
+    font-size: 2rem;
   }
+
   .process-timeline {
-    grid-template-columns: 1fr;
-    gap: 60px; /* Increase gap for vertical stacking */
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 0;
+  }
+
+  .process-timeline::before {
+    display: none;
+  }
+
+  .process-step {
+    max-width: 350px;
+    width: 100%;
+  }
+
+  /* Reset the scaling on mobile for a uniform look */
+  .process-step:nth-child(odd),
+  .process-step:nth-child(even) {
+    transform: none;
+  }
+
+  .process-card::before,
+  .process-card::after {
+    display: none;
   }
 }
